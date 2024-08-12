@@ -1,12 +1,10 @@
 /*!
-* Start Bootstrap - Grayscale v7.0.4 (https://startbootstrap.com/theme/grayscale)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+ * Start Bootstrap - Grayscale v7.0.4 (https://startbootstrap.com/theme/grayscale)
+ * Copyright 2013-2021 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
+ */
 
+// Scripts
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -22,7 +20,7 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     };
 
-    // Shrink the navbar 
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
@@ -35,6 +33,42 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             offset: 74,
         });
+    };
+
+    // Collapse responsive navbar when toggler is visible
+    const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const responsiveNavItems = [].slice.call(
+        document.querySelectorAll('#navbarResponsive .nav-link')
+    );
+    responsiveNavItems.map(function (responsiveNavItem) {
+        responsiveNavItem.addEventListener('click', () => {
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                navbarToggler.click();
+            }
+        });
+    });
+
+    // Typing effect function
+    function typeEffect(element, speed) {
+        const text = element.innerHTML;
+        element.innerHTML = "";
+        let i = 0;
+
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, speed);
+            }
+        }
+
+        typing();
     }
 
-    // Collapse responsive navbar when togg
+    // Apply typing effect to elements
+    const typingElements = document.querySelectorAll('.typing-effect');
+    typingElements.forEach(element => {
+        typeEffect(element, 50); // Adjust speed (in ms) as needed
+    });
+
+});
