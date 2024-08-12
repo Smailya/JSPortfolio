@@ -19,6 +19,23 @@
       background-color: #e0dede;
       padding: 25px;
     }
+
+    .typing-effect {
+      border-right: 2px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: black; }
+    }
   </style>
 </head>
 <body style="background-color:rgb(105, 111, 112);">
@@ -50,31 +67,38 @@
   <div class="container text-center">
     <h1>Contact me</h1>      
     
-    <p>
-        You can connect with me using the following email me.email@gmail.com <br></p>
-
-        <p>
-        sometimes I do get busy, My responce may take longer hope you do 
-        understand :)
+    <p class="typing-effect">
+      You can connect with me using the following email: me.email@gmail.com. Sometimes I do get busy, my response may take longer; hope you do understand. :)
     </p>
   </div>
 </div>
-  
-
-
-
-   
-
-
-
-  
 
 <footer class="container-fluid text-center">
-    <p> You can also find me on:</p>
-    <p> instagram</p>
-    <p> Youtube</p>
-    <p> Facebook</p>
+  <p> You can also find me on:</p>
+  <p> instagram</p>
+  <p> Youtube</p>
+  <p> Facebook</p>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const textElements = document.querySelectorAll('.typing-effect');
+    textElements.forEach((element) => {
+      const text = element.innerHTML;
+      element.innerHTML = '';
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          element.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, 100); // Adjust typing speed here (100ms)
+        }
+      }
+      type();
+    });
+  });
+</script>
 
 </body>
 </html>
