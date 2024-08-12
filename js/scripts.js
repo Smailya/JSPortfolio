@@ -16,9 +16,9 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
         if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+            navbarCollapsible.classList.remove('navbar-shrink');
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbarCollapsible.classList.add('navbar-shrink');
         }
     };
 
@@ -37,34 +37,4 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-
-    // Typing effect for elements with the 'typing-effect' class
-    const textElements = document.querySelectorAll('.typing-effect');
-    textElements.forEach((element) => {
-        const text = element.innerHTML;
-        element.innerHTML = '';
-        let index = 0;
-
-        function type() {
-            if (index < text.length) {
-                element.innerHTML += text.charAt(index);
-                index++;
-                setTimeout(type, 100); // Adjust typing speed here (100ms)
-            }
-        }
-        type();
-    });
-
-});
+    // Collapse responsive navbar when togg
