@@ -20,7 +20,6 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             navbarCollapsible.classList.add('navbar-shrink')
         }
-
     };
 
     // Shrink the navbar 
@@ -36,7 +35,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             offset: 74,
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -49,6 +48,23 @@ window.addEventListener('DOMContentLoaded', event => {
                 navbarToggler.click();
             }
         });
+    });
+
+    // Typing effect for elements with the 'typing-effect' class
+    const textElements = document.querySelectorAll('.typing-effect');
+    textElements.forEach((element) => {
+        const text = element.innerHTML;
+        element.innerHTML = '';
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Adjust typing speed here (100ms)
+            }
+        }
+        type();
     });
 
 });
