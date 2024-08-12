@@ -21,11 +21,28 @@
     }
 
     img {
-  border-radius: 8px;
-  position:left;
-  align-items: left;
-  padding: auto; left: 18px;
-}
+      border-radius: 8px;
+      position:left;
+      align-items: left;
+      padding: auto; left: 18px;
+    }
+
+    .typing-effect {
+      border-right: 2px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: black; }
+    }
   </style>
 </head>
 <body style="background-color:rgb(105, 111, 112);">
@@ -61,64 +78,38 @@
         <img src="./pictures/smiling-face-with-smiling-eyes.png" alt="Paris" width="300" height="300">
     </div>
     
-    <p>
-        I'm a webdeveloper located in south Africa.<br>
-        I have a huge passion for developing dynamic webstes<br>
-        with anymationI'm a very well organised person, problem solver<br>
-        fan of boxing, and ancien philosophy<br>
-
-        if you are interested let's make some amazing project together<br>
-
-        
-        
+    <p class="typing-effect">
+      I'm a web developer located in South Africa. I have a huge passion for developing dynamic websites with animation. I'm a very well-organized person, problem solver, fan of boxing, and ancient philosophy. If you are interested, let's make some amazing projects together.
     </p>
   </div>
 </div>
-  
-
-     
-     
-     
-
-    <div class="container-fluid bg-3 text-center">    
-
- 
-   
-
-
-  </div>
-
-
-</div><br><br>
-
-
-  
-  
-    
-  
-  
-
-
-
-
-     
-
-
-      
-
-  </div>
-</div><br>
-
-
-</div><br><br>
 
 <footer class="container-fluid text-center">
   <p> You can also find me on:</p>
   <p> instagram</p>
   <p> Youtube</p>
   <p> Facebook</p>
-
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const textElements = document.querySelectorAll('.typing-effect');
+    textElements.forEach((element) => {
+      const text = element.innerHTML;
+      element.innerHTML = '';
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          element.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, 100); // Adjust typing speed here (100ms)
+        }
+      }
+      type();
+    });
+  });
+</script>
 
 </body>
 </html>
