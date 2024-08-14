@@ -8,118 +8,67 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #e0dede;
       padding: 25px;
     }
-
     img {
       border-radius: 8px;
       position: left;
       align-items: left;
-      padding: auto; left: 18px;
-    }
-
-    .typing-effect {
-      border-right: 2px solid;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: black; }
-    }
-
-    /* Background image for the jumbotron */
-    .jumbotron {
-      background-image: url('./path/to/your/background-image.jpg'); /* Replace with your actual image path */
-      background-size: cover;
-      color: white;
+      padding: auto;
+      left: 18px;
     }
   </style>
 </head>
 <body style="background-color:rgb(105, 111, 112);">
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Portfolio</a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Portfolio</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>About Me</h1>    
-    
-    <div id="img">
+  </nav>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>About Me</h1>
+      <div id="img">
         <img src="./pictures/smiling-face-with-smiling-eyes.png" alt="Paris" width="300" height="300">
+      </div>
+      <p>I'm a web developer located in South Africa.<br>
+        I have a huge passion for developing dynamic websites<br>
+        with animation. I'm a very well-organized person, problem solver,<br>
+        fan of boxing, and ancient philosophy.<br>
+        If you are interested, let's make some amazing projects together.<br>
+      </p>
     </div>
-    
-    <p class="typing-effect">
-      Hi, Smaily here!<br>
-A Full Stack Developer by day, code ninja by night 🥷.<br>
-Master of Java, Node.js, React.js, and Django. I build web apps that don't just work—they thrive!<br>
-Currently expanding my knowledge on AWS, Azure DevOps, and Python. Always hungry for new tech and challenges.<br>
-    </p>
   </div>
-</div>
-
-<footer class="container-fluid text-center">
-  <p> Find me on:</p>
-  <p> instagram</p>
-  <p> Github</p>
-  <p> Facebook</p>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const textElements = document.querySelectorAll('.typing-effect');
-    textElements.forEach((element) => {
-      const text = element.innerHTML;
-      element.innerHTML = '';
-      let index = 0;
-
-      function type() {
-        if (index < text.length) {
-          element.innerHTML += text.charAt(index);
-          index++;
-          setTimeout(type, 100); // Adjust typing speed here (100ms)
-        }
-      }
-      type();
-    });
-  });
-</script>
-
+  <footer class="container-fluid text-center">
+    <p>You can also find me on:</p>
+    <p>Instagram</p>
+    <p>YouTube</p>
+    <p>Facebook</p>
+  </footer>
 </body>
 </html>
