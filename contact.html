@@ -8,104 +8,51 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
-    
-    /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #e0dede;
       padding: 25px;
     }
-
-    .typing-effect {
-      border-right: 2px solid;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: black; }
-    }
-
-    /* Background image for the jumbotron */
-    .jumbotron {
-      background-image: url('./path/to/your/background-image.jpg'); /* Replace with your actual image path */
-      background-size: cover;
-      color: white;
-    }
   </style>
 </head>
 <body style="background-color:rgb(105, 111, 112);">
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Portfolio</a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Portfolio</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+  </nav>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Contact Me</h1>
+      <p>You can connect with me using the following email: me.email@gmail.com<br></p>
+      <p>Sometimes I do get busy, and my response may take longer. I hope you understand :)</p>
     </div>
   </div>
-</nav>
-
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>Contact me</h1>      
-    
-    <p class="typing-effect">
-      You can connect with me using the following email: me.email@gmail.com. Sometimes I do get busy, my response may take longer; hope you do understand. :)
-    </p>
-  </div>
-</div>
-
-<footer class="container-fluid text-center">
-  <p> You can also find me on:</p>
-  <p> instagram</p>
-  <p> Youtube</p>
-  <p> Facebook</p>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const textElements = document.querySelectorAll('.typing-effect');
-    textElements.forEach((element) => {
-      const text = element.innerHTML;
-      element.innerHTML = '';
-      let index = 0;
-
-      function type() {
-        if (index < text.length) {
-          element.innerHTML += text.charAt(index);
-          index++;
-          setTimeout(type, 100); // Adjust typing speed here (100ms)
-        }
-      }
-      type();
-    });
-  });
-</script>
-
+  <footer class="container-fluid text-center">
+    <p>You can also find me on:</p>
+    <p>Instagram</p>
+    <p>YouTube</p>
+    <p>Facebook</p>
+  </footer>
 </body>
 </html>
