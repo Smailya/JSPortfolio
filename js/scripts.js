@@ -5,8 +5,7 @@
  */
 
 // Scripts
-window.addEventListener('DOMContentLoaded', event => {
-
+window.addEventListener('DOMContentLoaded', (event) => {
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -33,7 +32,7 @@ window.addEventListener('DOMContentLoaded', event => {
             target: '#mainNav',
             offset: 74,
         });
-    };
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -47,28 +46,4 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
-    // Typing effect function
-    function typeEffect(element, speed) {
-        const text = element.innerHTML;
-        element.innerHTML = "";
-        let i = 0;
-
-        function typing() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, speed);
-            }
-        }
-
-        typing();
-    }
-
-    // Apply typing effect to elements
-    const typingElements = document.querySelectorAll('.typing-effect');
-    typingElements.forEach(element => {
-        typeEffect(element, 50); // Adjust speed (in ms) as needed
-    });
-
 });
